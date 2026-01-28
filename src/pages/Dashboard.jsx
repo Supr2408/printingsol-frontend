@@ -306,22 +306,22 @@ if (fileInputRef.current) {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="px-4 py-4 bg-gray-50 border-b">
-                <p className="text-xs text-gray-400 uppercase font-bold tracking-wider">
+                <p className="text-xs text-gray-500 uppercase font-bold">
                   Wallet Balance
                 </p>
-                <p className="text-xl font-black text-green-600">
+                <p className="text-xs text-gray-500 uppercase font-bold">
                   ₹ {userData.balance.toFixed(2)}
                 </p>
               </div>
               <button
                 onClick={() => navigate("/transactions")}
-                className="w-full text-left px-4 py-3 hover:bg-gray-100 flex items-center gap-2 min-h-[48px] leading-normal"
+                className="w-full text-left px-4 py-3 hover:bg-gray-100 flex items-center gap-2 min-h-[48px] leading-normal hover:bg-gray-100"
               >
                 📄 History
               </button>
               <button
                 onClick={() => setShowRecharge(true)}
-                className="w-full text-left px-4 py-3 hover:bg-gray-100 flex items-center gap-2 min-h-[48px] leading-normal"
+                className="w-full text-left px-4 py-3 hover:bg-gray-100 flex items-center gap-2 min-h-[48px] leading-normal hover:bg-gray-100"
               >
                 💳 Recharge
               </button>
