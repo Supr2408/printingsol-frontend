@@ -281,25 +281,46 @@ if (fileInputRef.current) {
   return (
     <div className="min-h-[100dvh] bg-gray-50 pb-10">
       {/* HEADER */}
-      <header className="fixed top-0 left-0 right-0 flex justify-between items-center px-4 py-4 bg-blue-600 text-white shadow-lg z-50 pt-safe">
-        <h1 className="text-xl font-bold tracking-tight">Printingsol</h1>
-        <div className="relative">
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              setShowAccountMenu((v) => !v);
-            }}
-            className="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-full transition-colors"
+      {/* HEADER */}
+<header className="fixed top-0 left-0 right-0 flex justify-between items-center px-4 py-4 bg-blue-600 text-white shadow-lg z-50 pt-safe">
+  <h1 className="text-xl font-bold tracking-tight">Printingsol</h1>
+  <div className="relative">
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        setShowAccountMenu((v) => !v);
+      }}
+      className="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-2 py-1.5 rounded-full transition-colors border border-white/20"
+    >
+      {/* Logic: If photoURL exists (Google/Firebase user), show it.
+          Otherwise, show a fallback SVG icon for Guest/Simple accounts.
+      */}
+      {userData.photoURL ? (
+        <img
+          src={userData.photoURL}
+          alt="profile"
+          className="w-8 h-8 rounded-full border border-white/50 object-cover"
+          referrerPolicy="no-referrer"
+        />
+      ) : (
+        <div className="w-8 h-8 rounded-full bg-blue-400 flex items-center justify-center text-white border border-white/30">
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24" 
+            fill="currentColor" 
+            className="w-5 h-5"
           >
-            <img
-              src={userData.photoURL || "/avatar.png"}
-              alt="avatar"
-              className="w-7 h-7 rounded-full border border-white/50"
-            />
-            <span className="font-medium text-sm">
-              {userData.isGuest ? "Guest" : userData.name}
-            </span>
-          </button>
+            <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clipRule="evenodd" />
+          </svg>
+        </div>
+      )}
+      
+      <span className="font-semibold text-sm pr-2">
+        {userData.isGuest ? "Guest" : (userData.displayName || userData.name || "User")}
+      </span>
+    </button>
+
+ 
           {showAccountMenu && (
   <div
     className="absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-xl z-50 overflow-hidden border border-gray-100"
