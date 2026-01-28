@@ -64,14 +64,14 @@ export default function Transactions() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-[100dvh] flex items-center justify-center">
         Loading transactions…
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-[100dvh] bg-gray-100 p-6">
       <div className="max-w-4xl mx-auto">
 
         {/* HEADER */}

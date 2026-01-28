@@ -46,8 +46,10 @@ body {
   font-family: "Inter", sans-serif;
   background: var(--color-bg);
   color: var(--color-dark);
-  min-height: 100vh;
+  min-height: 100dvh;
   overflow-x: hidden;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 /* ===============================
@@ -87,4 +89,8 @@ body {
 #html5-qr-reader__status_span, 
 #html5-qr-reader__dashboard {
   display: none !important;
+}
+
+.pt-safe {
+  padding-top: calc(1rem + env(safe-area-inset-top));
 }

@@ -270,7 +270,7 @@ if (fileInputRef.current) {
 
   if (!userData) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-[100dvh] flex items-center justify-center bg-gray-50">
         <div className="animate-pulse text-blue-600 font-medium text-lg">
           Loading...
         </div>
@@ -279,9 +279,9 @@ if (fileInputRef.current) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-10">
+    <div className="min-h-[100dvh] bg-gray-50 pb-10">
       {/* HEADER */}
-      <header className="flex justify-between items-center px-4 py-4 bg-blue-600 text-white shadow-lg sticky top-0 z-50">
+      <header className="flex justify-between items-center px-4 py-4 bg-blue-600 text-white shadow-lg sticky top-0 z-50 pt-safe">
         <h1 className="text-xl font-bold tracking-tight">Printingsol</h1>
         <div className="relative">
           <button
@@ -337,7 +337,7 @@ if (fileInputRef.current) {
       </header>
 
       {/* MAIN */}
-      <main className="p-4 max-w-lg mx-auto space-y-4">
+      <main className="pt-24 p-4 max-w-lg mx-auto space-y-4">
         <input
           ref={fileInputRef}
           type="file"

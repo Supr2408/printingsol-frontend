@@ -75,7 +75,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-6 bg-gray-100">
+    <div className="min-h-[100dvh] flex flex-col items-center justify-center gap-6 bg-gray-100">
       <h1 className="text-3xl font-bold">Printingsol</h1>
 
       {/* Google Login */}
