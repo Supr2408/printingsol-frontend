@@ -1,0 +1,18 @@
+.main-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.balance-card {
+  background: linear-gradient(135deg,var(--color-primary),var(--color-secondary));
+  color: white;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+}

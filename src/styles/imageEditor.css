@@ -1,0 +1,281 @@
+/* Container & Overall Layout */
+.mobile-editor-overlay { 
+  position: fixed; 
+  inset: 0; 
+  background: #000; 
+  z-index: 5000; 
+  display: flex; 
+  flex-direction: column; 
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.mobile-editor-container { 
+  height: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  background: #f4f4f7; 
+}
+
+/* Header & Tabs */
+.editor-nav { 
+  height: 60px; 
+  background: white; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0 20px; 
+  border-bottom: 1px solid #ddd; 
+}
+.nav-title { font-weight: 800; color: #333; }
+.nav-back, .nav-save { background: none; border: none; font-size: 16px; padding: 10px; cursor: pointer; }
+.nav-save { color: #007bff; font-weight: 700; }
+
+.page-tabs-container { 
+  display: flex; 
+  gap: 10px; 
+  padding: 10px 20px; 
+  background: #fff; 
+  overflow-x: auto; 
+  border-bottom: 1px solid #eee; 
+  scrollbar-width: none;
+}
+.page-tabs-container::-webkit-scrollbar { display: none; }
+
+.page-tab-item { 
+  background: #f0f0f0; 
+  padding: 8px 16px; 
+  border-radius: 20px; 
+  font-size: 13px; 
+  font-weight: 600; 
+  white-space: nowrap; 
+  cursor: pointer; 
+  position: relative; 
+  display: flex;
+  align-items: center;
+}
+.page-tab-item.active { background: #007bff; color: white; }
+.tab-del { margin-left: 8px; background: rgba(0,0,0,0.15); border-radius: 50%; width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; }
+.tab-add { background: #e7f3ff; color: #007bff; border: none; width: 34px; height: 34px; border-radius: 50%; font-size: 18px; font-weight: bold; flex-shrink: 0; }
+
+/* Interactive Preview Area */
+.mobile-preview-area { 
+  flex: 1; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 15px; 
+  position: relative; 
+  overflow: hidden; 
+  background: #d1d1d6; 
+}
+.mobile-preview-area canvas { 
+  max-width: 100%; 
+  max-height: 100%; 
+  background: white; 
+  box-shadow: 0 5px 25px rgba(0,0,0,0.2); 
+}
+
+/* Drag Indicators for Page Switching */
+.mobile-preview-area.dragging-active::before, 
+.mobile-preview-area.dragging-active::after {
+  position: absolute; top: 20px; bottom: 20px; width: 50px; 
+  background: rgba(0, 123, 255, 0.1); border: 2px dashed #007bff; 
+  border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  font-size: 10px; color: #007bff; font-weight: bold; pointer-events: none; z-index: 1000;
+  writing-mode: vertical-rl; text-orientation: mixed;
+}
+.mobile-preview-area.dragging-active::before { content: 'PREVIOUS PAGE'; left: 10px; }
+.mobile-preview-area.dragging-active::after { content: 'NEXT PAGE'; right: 10px; }
+
+/* Bottom Control Panel */
+.bottom-controls { 
+  background: white; 
+  padding: 20px; 
+  border-radius: 24px 24px 0 0; 
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.05); 
+}
+
+.control-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.toggle-group { display: flex; background: #f0f0f0; padding: 4px; border-radius: 10px; }
+.toggle-group button { border: none; background: none; padding: 6px 14px; font-size: 12px; border-radius: 7px; font-weight: 600; }
+.toggle-group button.active { background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); color: #007bff; }
+.add-img-trigger { background: #e7f3ff; color: #007bff; padding: 10px 18px; border-radius: 12px; font-weight: 700; font-size: 14px; cursor: pointer; }
+
+/* Adjustment Panel & Sliders */
+.adjustment-panel { margin-bottom: 15px; display: flex; flex-direction: column; gap: 12px; }
+.slider-group { position: relative; display: flex; flex-direction: column; gap: 4px; }
+.slider-header { display: flex; justify-content: space-between; font-size: 11px; color: #555; text-transform: uppercase; font-weight: 700; }
+.slider-header b { color: #007bff; background: #e7f3ff; padding: 2px 6px; border-radius: 4px; }
+
+input[type="range"] { 
+  width: 100%; height: 6px; background: #e0e0e0; border-radius: 10px; outline: none; -webkit-appearance: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 22px; height: 22px; background: #007bff; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* 6-Step Visuals for Brightness */
+.step-dots {
+  display: flex; justify-content: space-between; padding: 0 10px; margin-top: -14px; pointer-events: none;
+}
+.step-dots span { width: 4px; height: 4px; background: #bbb; border-radius: 50%; }
+.step-dots span.mid-dot { background: #007bff; width: 6px; height: 6px; margin-top: -1px; }
+
+/* Final Actions */
+.final-actions { display: flex; gap: 10px; border-top: 1px solid #eee; padding-top: 15px; margin-top: 5px; }
+.copies-stepper { background: #f8f8fa; display: flex; align-items: center; border-radius: 12px; border: 1px solid #ddd; }
+.copies-stepper button { width: 40px; height: 40px; border: none; background: transparent; font-size: 20px; color: #333; }
+.copies-stepper span { font-weight: 800; font-size: 13px; color: #333; min-width: 70px; text-align: center; }
+.primary-generate-btn { flex: 1; background: #28a745; color: white; border: none; border-radius: 12px; font-weight: 700; height: 45px; }
+/* Container for the dual buttons (Scan & Add) */
+.editor-action-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+/* The Live Camera / Xerox Button */
+.xerox-trigger {
+  flex: 1;
+  background: #007bff; /* Blue */
+  color: white;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.xerox-trigger:active {
+  transform: scale(0.96);
+  background: #0056b3;
+}
+
+/* The Add File Button */
+.add-img-trigger {
+  flex: 1;
+  background: #e7f3ff;
+  color: #007bff;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid #cce5ff;
+}
+
+/* Container for the Remove Image button */
+.remove-element-container {
+  width: 100%;
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.remove-element-btn {
+  width: 100%;
+  background: #fff5f5;
+  color: #eb4d4b;
+  border: 1px solid #ffe5e5;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.remove-element-btn:active {
+  background: #ffe5e5;
+}
+
+.element-actions-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.done-editing-btn {
+  flex: 1;
+  background: #28a745; /* Green color for 'Finish' */
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.remove-element-btn {
+  flex: 1;
+  background: #fff1f0;
+  color: #ff4d4f;
+  border: 1px solid #ffccc7;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.done-editing-btn:active {
+  transform: scale(0.98);
+  filter: brightness(0.9);
+}
+
+.slider-with-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.slider-with-buttons button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: white;
+  font-size: 20px;
+  font-weight: bold;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0; /* Prevents button from squishing */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.slider-with-buttons button:active {
+  background: #f0f0f0;
+  transform: scale(0.95);
+}
+
+.slider-with-buttons input[type="range"] {
+  flex: 1; /* Slider takes up remaining space */
+  margin: 0;
+}
+
+.element-actions-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}

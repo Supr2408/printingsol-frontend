@@ -1,0 +1,114 @@
+/* ========== OVERLAY ========== */
+.scanner-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ========== CONTAINER ========== */
+.scanner-container {
+  width: 100%;
+  height: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  background: black;
+}
+
+/* ========== HEADER ========== */
+.scanner-header {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  color: white;
+}
+
+.scanner-title {
+  font-weight: bold;
+}
+
+.scanner-cancel {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+}
+
+/* ========== CAMERA ========== */
+.camera-container {
+  flex: 1;
+  position: relative;
+  background: black;
+  overflow: hidden;
+}
+
+.camera-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* 🔥 IMPORTANT: NO MIRROR */
+  transform: scaleX(1);
+}
+
+/* ========== GUIDE BOX ========== */
+.scanner-guide {
+  position: absolute;
+  inset: 15%; /* MUST MATCH JS */
+  border: 1px solid rgba(255,255,255,0.35);
+}
+
+.guide-corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 3px solid #4da3ff;
+}
+
+.guide-corner.tl { top: 0; left: 0; border-right: none; border-bottom: none; }
+.guide-corner.tr { top: 0; right: 0; border-left: none; border-bottom: none; }
+.guide-corner.bl { bottom: 0; left: 0; border-right: none; border-top: none; }
+.guide-corner.br { bottom: 0; right: 0; border-left: none; border-top: none; }
+
+/* ========== PROCESSING ========== */
+.processing-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========== FOOTER ========== */
+.scanner-footer {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shutter-outer {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 4px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shutter-inner {
+  width: 56px;
+  height: 56px;
+  background: white;
+  border-radius: 50%;
+}

@@ -1,0 +1,14 @@
+.print-interface {
+  display: flex;
+  max-height: 70vh;
+}
+
+.settings-panel {
+  width: 300px;
+  border-right: 1px solid #ddd;
+}
+
+.preview-panel {
+  flex: 1;
+  background: #f9f9f9;
+}

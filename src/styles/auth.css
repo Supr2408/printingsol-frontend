@@ -1,0 +1,22 @@
+#appLoginContainer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg,#f5f7ff,#e8ecff);
+}
+
+.login-container {
+  max-width: 360px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.login-container::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle,rgba(67,97,238,.1),transparent 70%);
+  animation: pulse 8s infinite alternate;
+}
