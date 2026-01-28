@@ -4,7 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import Transactions from "./pages/Transactions";
 import ProtectedRoute from "./components/ProtectedRoute";
 
-// --- ADD THESE IMPORTS ---
+// --- IMPORT THE NEW POLICY PAGES ---
 import About from "./pages/About";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -17,7 +17,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Login />} />
 
-      {/* --- ADD THESE NEW POLICY ROUTES --- */}
+      {/* --- ADD THESE NEW ROUTES --- */}
       <Route path="/about" element={<About />} />
       <Route path="/privacy-policy" element={<Privacy />} />
       <Route path="/terms" element={<Terms />} />

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"; // Import Link component
+import { Link } from "react-router-dom"; // You MUST import Link
 
 export default function Footer() {
   return (
