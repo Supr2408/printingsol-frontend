@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"; // Import Link
+import { Link } from "react-router-dom"; // Import Link component
 
 export default function Footer() {
   return (
@@ -14,7 +14,7 @@ export default function Footer() {
       </div>
 
       <p className="text-center mt-3 text-gray-400">
-        © 2025 Printingsol. All rights reserved.
+        © 2026 Printingsol. All rights reserved.
       </p>
     </footer>
   );
