@@ -301,38 +301,40 @@ if (fileInputRef.current) {
             </span>
           </button>
           {showAccountMenu && (
-            <div
-              className="absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-xl z-50 overflow-hidden border border-gray-100"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="px-4 py-4 bg-gray-50 border-b">
-                <p className="text-xs text-gray-500 uppercase font-bold">
-                  Wallet Balance
-                </p>
-                <p className="text-xs text-gray-500 uppercase font-bold">
-                  ₹ {userData.balance.toFixed(2)}
-                </p>
-              </div>
-              <button
-                onClick={() => navigate("/transactions")}
-                className="text-xs text-gray-500 uppercase font-bold"
-              >
-                📄 History
-              </button>
-              <button
-                onClick={() => setShowRecharge(true)}
-                className="text-xs text-gray-500 uppercase font-bold"
-              >
-                💳 Recharge
-              </button>
-              <button
-                onClick={handleLogout}
-                className="text-xs text-gray-500 uppercase font-bold"
-              >
-                🚪 Logout
-              </button>
-            </div>
-          )}
+  <div
+    className="absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-xl z-50 overflow-hidden border border-gray-100"
+    onClick={(e) => e.stopPropagation()}
+  >
+    <div className="px-4 py-4 bg-gray-50 border-b">
+      <p className="text-[10px] text-gray-400 uppercase font-black tracking-wider">
+        Wallet Balance
+      </p>
+      <p className="text-lg font-bold text-gray-800">
+        ₹ {userData.balance.toFixed(2)}
+      </p>
+    </div>
+    
+    {/* Change these buttons to have 'block' and 'w-full' for visibility */}
+    <button
+      onClick={() => navigate("/transactions")}
+      className="w-full text-left px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors border-b border-gray-50"
+    >
+      📄 View History
+    </button>
+    <button
+      onClick={() => setShowRecharge(true)}
+      className="w-full text-left px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors border-b border-gray-50"
+    >
+      💳 Top Up Wallet
+    </button>
+    <button
+      onClick={handleLogout}
+      className="w-full text-left px-4 py-3 text-sm font-semibold text-red-600 hover:bg-red-50 transition-colors"
+    >
+      🚪 Sign Out
+    </button>
+  </div>
+)}
         </div>
       </header>
 
