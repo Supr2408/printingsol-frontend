@@ -281,7 +281,7 @@ if (fileInputRef.current) {
   return (
     <div className="min-h-[100dvh] bg-gray-50 pb-10">
       {/* HEADER */}
-      <header className="flex justify-between items-center px-4 py-4 bg-blue-600 text-white shadow-lg sticky top-0 z-50 pt-safe">
+      <header className="fixed top-0 left-0 right-0 flex justify-between items-center px-4 py-4 bg-blue-600 text-white shadow-lg z-50 pt-safe">
         <h1 className="text-xl font-bold tracking-tight">Printingsol</h1>
         <div className="relative">
           <button
@@ -337,7 +337,7 @@ if (fileInputRef.current) {
       </header>
 
       {/* MAIN */}
-      <main className="pt-24 p-4 max-w-lg mx-auto space-y-4">
+      <main className="pt-28 p-4 max-w-lg mx-auto space-y-4">
         <input
           ref={fileInputRef}
           type="file"
