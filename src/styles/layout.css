@@ -1,15 +1,33 @@
+/* Add this wrapper to manage the whole page layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 70px; /* Adjust this based on your actual header height */
+}
+
 .header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+  height: 70px; /* Give it a fixed height */
   padding: 1rem 1.5rem;
-  background: linear-gradient(135deg,var(--color-primary),var(--color-secondary));
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: var(--shadow-md);
+}
+
+.footer {
+  margin-top: auto; /* This pushes the footer to the bottom */
+  padding: 1.5rem;
+  background: var(--color-darker);
+  color: white;
+  text-align: center;
+  width: 100%;
 }
 
 .header-title {
@@ -19,10 +37,3 @@
   gap: .5rem;
 }
 
-.footer {
-  margin-top: auto;
-  padding: 1.5rem;
-  background: var(--color-darker);
-  color: white;
-  text-align: center;
-}
