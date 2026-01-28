@@ -315,13 +315,13 @@ if (fileInputRef.current) {
               </div>
               <button
                 onClick={() => navigate("/transactions")}
-                className="w-full text-left px-4 py-3 hover:bg-gray-100 flex items-center gap-2"
+                className="w-full text-left px-4 py-3 hover:bg-gray-100 flex items-center gap-2 min-h-[48px] leading-normal"
               >
                 📄 History
               </button>
               <button
                 onClick={() => setShowRecharge(true)}
-                className="w-full text-left px-4 py-3 hover:bg-gray-100 flex items-center gap-2"
+                className="w-full text-left px-4 py-3 hover:bg-gray-100 flex items-center gap-2 min-h-[48px] leading-normal"
               >
                 💳 Recharge
               </button>
