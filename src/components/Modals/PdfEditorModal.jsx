@@ -202,7 +202,7 @@ export default function PdfEditorModal({ file, onClose, onConfirm }) {
     return (
       <div className="editor-overlay">
         <div className="editor-modal">
-          <div className="editor-header">
+          <div className="editor-header pt-safe">
             <span>Select Pages</span>
             <div style={{display: 'flex', gap: '8px'}}>
                 <button onClick={() => setSelectedPages(Array.from({length: totalPages}, (_,i)=>i+1))} style={{fontSize: '0.75rem', padding: '4px 8px'}}>All</button>

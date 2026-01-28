@@ -114,7 +114,7 @@ export default function QrScanModal({ onClose, onScan }) {
   return (
     <div className="editor-overlay">
       <div className="editor-modal max-w-sm">
-        <div className="editor-header">
+        <div className="editor-header pt-safe">
           <span>Scan Printer QR</span>
           <button
             className="close-btn"

@@ -83,7 +83,7 @@ export default function RechargeModal({
   return (
     <div className="editor-overlay">
       <div className="editor-modal max-w-sm">
-        <div className="editor-header">
+        <div className="editor-header pt-safe">
           <span>Recharge Wallet</span>
           <button className="close-btn" onClick={onClose}>✕</button>
         </div>

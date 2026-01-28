@@ -669,7 +669,7 @@ if (fileInputRef.current) {
 
       {showPhotoSourceChoice && (
         <div
-          className="fixed inset-0 z-[60] flex items-end justify-center bg-black/50 p-4"
+          className="fixed inset-0 bg-black/50 flex justify-center items-end modal-safe"
           onClick={() => setShowPhotoSourceChoice(false)}
         >
           <div
